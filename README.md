@@ -64,4 +64,20 @@ You can use this approximation when evaluating $$\nabla^2\psi$$.
 
 ### Symplectic Time Integration
 
-Note that the wavefunction is complex.
+There is one other subtle nuance that is very important to keep in mind while solving this problem.
+If you don't use a [symplectic integrator](https://en.wikipedia.org/wiki/Symplectic_integrator), **your code will exhibit massive numerical instabilities**.
+Symplectic integrators are a fairly niche subject, and it isn't necessary for you to understand the topic in detail.
+The important thing to understand is that **naive implementations that update both the real and imaginary part of the wavefunction simultaneously will not be numerically stable**.
+
+The simplest way to implement symplectic integration in this case is to first update the real part of the wavefunction, and then update the imaginary part.
+If our wavefunction has a real part called $\psi_{re}$ and an imaginary part called $\psi_{im}$, so that
+
+$$\psi = \psi_{re} + i \psi_{im}$$
+
+then what we can do is first update the real component of the wavefunction:
+
+$$\psi_{re}(\vec{x},t+\Delta t) = \psi_{re}(\vec{x},t) +  \hat{H} \psi_{im}(\vec{x},t) \Delta t$$
+
+and only **after finishing the update of the real component**, we can then begin calculating and applying the update to the imaginary component:
+
+$$\psi_{im}(\vec{x},t+\Delta t) = \psi_{im}(\vec{x},t) - \hat{H} \psi_{re}(\vec{x},t + \Delta t) \Delta t$$
