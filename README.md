@@ -1,7 +1,7 @@
 # CUDA Simulation of a Double Slit Experiment
 
 In this problem, you will apply the time evolution operator to simulate the dynamics of a Gaussian wave packet that encounters a double slit.
-The starter code (`animation.py`) initializes the system and creates an animation, but does not actually time evolve the system.
+The starter code (`animation.py`) initializes the system and creates an animation, but does not actually time evolve the system - you'll be responsible for implementing that functionality.
 
 ## Background
 
