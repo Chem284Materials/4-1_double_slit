@@ -35,7 +35,7 @@ You will use this approximation to perform a dynamics simulation of an electron 
 
 ## Your Task
 
-If you run the code in this repository (`animation.py`), you will find that it creates file, `animation.gif`, that should show the time evolution of an electron's probability distribution.
+If you run the code in this repository (`animation.py`), you will find that it creates a file, `animation.gif`, that should show the time evolution of an electron's probability distribution.
 Currently, the code does not perform any time evolution; you must implement the time-evolution functionality described above, **using CUDA**.
 
 Set $\hbar$ and the mass of the particle to 1 in your code.
