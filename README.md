@@ -80,6 +80,6 @@ then what we can do is first update the real component of the wavefunction:
 
 $$\psi_{re}(\vec{x},t+\Delta t) = \psi_{re}(\vec{x},t) +  \hat{H} \psi_{im}(\vec{x},t) \Delta t$$
 
-and only **after finishing the update of the real component**, we can then begin calculating and applying the update to the imaginary component:
+and only **after finishing the update of the real component**, we can begin calculating and applying the update to the imaginary component:
 
 $$\psi_{im}(\vec{x},t+\Delta t) = \psi_{im}(\vec{x},t) - \hat{H} \psi_{re}(\vec{x},t + \Delta t) \Delta t$$
